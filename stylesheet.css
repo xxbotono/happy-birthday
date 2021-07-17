@@ -1,0 +1,91 @@
+:root {
+    font-size: larger;
+    --typewriterSpeed: 6s;
+}
+
+body {
+    font-family: 'Overpass Mono', monospace;
+    height: 100vh;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+}
+
+nav {
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 0; 
+    width: 100vw;
+    
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    height: 7vh;
+    color: white;
+    transition: 500ms;
+}
+
+nav a:hover {
+    padding-left: 3vw;
+    transition-duration: 500ms;
+ }
+
+.my-projects {
+    background-color: #EC7063;
+}
+
+.about-me {
+    background-color: #52BE80;
+}
+
+.contact {
+    background-color: #5DADE2;
+}
+
+h1 {
+    position: relative;
+    font-size: 3rem;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+}
+
+h1::before,
+h1::after {
+    content:'';
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1::before {
+    background: white;   
+    animation: 
+        typewriter var(--typewriterSpeed) forwards steps(23) 1s;
+}
+
+h1::after {
+    width: 0.125em;
+    background: black;
+    animation: 
+        typewriter var(--typewriterSpeed) forwards steps(23) 1s,
+        blink 750ms steps(23) infinite;
+}
+
+@keyframes typewriter {
+    to { left: 100% }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
